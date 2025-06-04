@@ -1,0 +1,9 @@
+#!/bin/bash
+# Executable script for running the application
+
+# Determine script directory
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Run Python script with correct module path
+export PYTHONPATH="$SCRIPT_DIR/src:$PYTHONPATH"
+python3 "$SCRIPT_DIR/src/main.py" "$@"
